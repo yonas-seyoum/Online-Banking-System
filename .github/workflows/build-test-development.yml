@@ -19,10 +19,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "18"
-      - name: Debug
-        run: |
-          echo "Current directory: $PWD"
-          ls -la
+      - name: Install Dependencies
+        run: npm ci
+        working-directory: app
       - name: Build projects
         run: ./build-all.sh
       - name: Upload coverage reports
