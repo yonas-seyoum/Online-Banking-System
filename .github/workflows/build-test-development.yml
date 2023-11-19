@@ -28,9 +28,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: coverage-reports
-          path: |
-            **/coverage/*
-            !**/node_modules/**
+          path: app/coverage
 
   sonarcloud_scan:
     name: Sonar Cloud quality gate
