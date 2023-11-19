@@ -19,15 +19,16 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "18"
+      - name: Install Dependencies
+        run: npm ci
+        working-directory: app
       - name: Build projects
         run: ./build-all.sh
       - name: Upload coverage reports
         uses: actions/upload-artifact@v2
         with:
           name: coverage-reports
-          path: |
-            **/coverage/*
-            !**/node_modules/**
+          path: app/coverage
 
   sonarcloud_scan:
     name: Sonar Cloud quality gate
