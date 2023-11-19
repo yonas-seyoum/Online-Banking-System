@@ -3,7 +3,7 @@
 set -e  # Fail the script if any command fails
 
 projects=(
-    "app/*"
+    "app"
 )
 
 root_directory=$PWD  # Store the absolute path to your repository
