@@ -4,6 +4,7 @@ type Theme = {
   colors: {
     primary: string;
     secondary: string;
+    tertiary: string;
   };
 };
 
@@ -20,6 +21,7 @@ const initialTheme: Theme = {
   colors: {
     primary: "white",
     secondary: "#333",
+    tertiary: "#f3f3f3",
   },
 };
 
