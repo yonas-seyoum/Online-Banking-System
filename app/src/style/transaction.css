@@ -1,0 +1,30 @@
+.transaction {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+    margin-top: 20px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
+}
+
+.remark-holder {
+    display: flex;
+    justify-content: flex-start;
+    width: 40%;
+}
+
+.date-holder {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+}
+
+.amount-holder {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+}
