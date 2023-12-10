@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { ThemeContext } from "../style/theme";
 
 import TopBar from "./topBar";
-import RecentTransactions from "./recentTransactions";
-import { AccountStatus } from "./accountStatus";
+import { Route, Routes } from "react-router-dom";
+import Dashboard from "../pages/dashboard";
 
 export default function Main() {
   const { theme } = useContext(ThemeContext)!;
@@ -16,9 +16,10 @@ export default function Main() {
       }}
     >
       <TopBar />
-      <div className="main">
-        <AccountStatus />
-        <RecentTransactions />
+      <div className="main" style={{ backgroundColor: theme.colors.tertiary }}>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+        </Routes>
       </div>
     </div>
   );
