@@ -1,31 +1,10 @@
 import React, { useContext, useState } from "react";
 import { ThemeContext } from "../style/theme";
-import "../App.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  IconDefinition,
-  faGear,
-  faHouse,
-  faMoneyBillTransfer,
-  faPiggyBank,
-} from "@fortawesome/free-solid-svg-icons";
-
-type MenuItem = {
-  route: string;
-  icon: IconDefinition;
-};
-type MenuItems = {
-  [key: string]: MenuItem;
-};
-
-const menuItems: MenuItems = {
-  Dashboard: { route: "/", icon: faHouse },
-  Savings: { route: "/savings", icon: faPiggyBank },
-  Withdraw: { route: "/withdraw", icon: faMoneyBillTransfer },
-  Transfer: { route: "/transfer", icon: faMoneyBillTransfer },
-  Settings: { route: "/settings", icon: faGear },
-};
+import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import { menuItems } from "../constants/menu";
+import "../App.css";
 
 export default function Menu() {
   const { theme } = useContext(ThemeContext)!;
@@ -39,7 +18,7 @@ export default function Menu() {
       }}
     >
       <div className="menu-header">
-        <div className="">Yo Bank Yo Bank</div>
+        <div className="">Yon Bank</div>
       </div>
       {Object.keys(menuItems).map((elements, index) => {
         const route: string = menuItems[elements].route;

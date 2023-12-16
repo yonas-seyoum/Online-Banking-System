@@ -31,6 +31,16 @@ export default function TransactionProvider({
       date: "12:24 pm 13 December 2023",
       amount: "3000$",
     },
+    {
+      remark: "Transfer Ruth",
+      date: "12:24 pm 13 December 2023",
+      amount: "3000$",
+    },
+    {
+      remark: "Transfer Ruth",
+      date: "12:24 pm 13 December 2023",
+      amount: "3000$",
+    },
   ];
   return (
     <TransactionContext.Provider value={tran}>

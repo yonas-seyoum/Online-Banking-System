@@ -24,9 +24,9 @@ export default function TopBar() {
     };
     const darkMode = {
       colors: {
-        primary: "black",
+        primary: "#1a1625",
         secondary: "white",
-        tertiary: "#292929",
+        tertiary: "#2f2b3a",
       },
     };
 
@@ -65,7 +65,7 @@ export default function TopBar() {
       <div
         style={{
           display: "flex",
-          justifyContent: "space-evenly",
+          justifyContent: "space-between",
           alignItems: "center",
           width: "160px",
         }}
