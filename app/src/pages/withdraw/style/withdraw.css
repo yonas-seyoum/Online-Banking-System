@@ -14,13 +14,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 84%;
   height: 91.1%;
-  background-color: #1a1625;
+  z-index: 2;
+}
 
-  opacity: 0.5;
-  z-index: 1;
+.card-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(26, 22, 37, 0.5);
+  z-index: -1;
 }
 
 .cashout-options {
@@ -46,8 +53,6 @@
   -moz-transition:
     transform 0.3s,
     box-shadow 0.3s;
-
-  z-index: 0;
 }
 
 .cashout-options:hover {
@@ -69,7 +74,8 @@
   box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  z-index: 50;
+  opacity: 1;
 }
 
 .cashout-card > div {
@@ -105,7 +111,7 @@
 .inputss {
   width: 100%;
   height: 3rem;
-  color: white;
+  color: #1a1625;
 }
 .inputss {
   background-color: #1a1625;

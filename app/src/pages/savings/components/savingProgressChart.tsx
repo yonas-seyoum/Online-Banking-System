@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   AreaChart,
   Area,
@@ -9,12 +9,14 @@ import {
   Legend,
 } from "recharts";
 import { monthlySavingsData, yearlySavingsData } from "../data/savingData";
+import { ThemeContext } from "../../../style/theme";
 
 export interface SavingTimeline {
   timeline: "Yearly" | "Monthly";
 }
 
 const SavingProgressChart: React.FC<SavingTimeline> = ({ timeline }) => {
+  const { theme } = useContext(ThemeContext)!;
   return (
     <>
       <AreaChart
@@ -27,7 +29,12 @@ const SavingProgressChart: React.FC<SavingTimeline> = ({ timeline }) => {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Area type="monotone" dataKey="Savings" stroke="black" fill="#1a1625" />
+        <Area
+          type="monotone"
+          dataKey="Savings"
+          stroke={theme.colors.secondary}
+          fill={theme.colors.secondary}
+        />
       </AreaChart>
     </>
   );

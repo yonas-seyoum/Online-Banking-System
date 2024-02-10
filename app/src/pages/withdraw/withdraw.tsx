@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import "./style/withdraw.css";
+import { ThemeContext } from "../../style/theme";
 
 interface CashoutMethod {
   method: "Through Agent" | "Through ATM";
@@ -31,6 +32,7 @@ export default function Withdraw() {
   });
 
   const [methodIsSelected, setMethodIsSelected] = useState(false);
+  const { theme } = useContext(ThemeContext)!;
 
   return (
     <>
@@ -45,6 +47,10 @@ export default function Withdraw() {
         )}
         <div
           className="cashout-options"
+          style={{
+            color: theme.colors.secondary,
+            backgroundColor: theme.colors.primary,
+          }}
           onClick={() => {
             setMethodIsSelected(true);
             setwithdrawalMethod({ method: "Through ATM" });
@@ -54,6 +60,10 @@ export default function Withdraw() {
         </div>
         <div
           className="cashout-options"
+          style={{
+            color: theme.colors.secondary,
+            backgroundColor: theme.colors.primary,
+          }}
           onClick={() => {
             setwithdrawalMethod({ method: "Through Agent" });
             setMethodIsSelected(true);

@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { AccountStatus } from "../../components/accountStatus";
 
 import "../../style/recentTransactions.css";
 import SavingProgressChart, {
   SavingTimeline,
 } from "./components/savingProgressChart";
+import { ThemeContext } from "../../style/theme";
 
 export default function Savings() {
+  const { theme } = useContext(ThemeContext)!;
   const [timeline, setTimeline] = useState<SavingTimeline>({
     timeline: "Monthly",
   });
@@ -26,7 +28,13 @@ export default function Savings() {
   return (
     <>
       <AccountStatus />
-      <div className="recent-transaction">
+      <div
+        className="recent-transaction"
+        style={{
+          color: theme.colors.secondary,
+          backgroundColor: theme.colors.primary,
+        }}
+      >
         <div className="timeline-wrapper">
           <input
             className="timeline"
@@ -41,9 +49,7 @@ export default function Savings() {
             onClick={changeTimelineToYear}
           />
         </div>
-        {/* <div className="wrapper"> */}
         <SavingProgressChart timeline={timeline.timeline} />
-        {/* </div> */}
 
         <div className="wrapper saving">
           <div className="selector-wrapper">
